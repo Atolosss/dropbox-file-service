@@ -21,7 +21,4 @@ public class FileDocument {
     private String url;
     private Binary fileData;
 
-    public FileDocument(String name) {
-        this.name = name;
-    }
 }

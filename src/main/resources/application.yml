@@ -9,7 +9,13 @@ spring:
     mongodb:
       username: rootuser
       password: rootpass
-      database: users
+      database: files
       authentication-database: admin
       port: 27017
       host: localhost
+
+logging:
+  level:
+    org.zalando.logbook: TRACE
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
