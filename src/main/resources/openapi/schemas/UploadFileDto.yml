@@ -9,4 +9,8 @@ properties:
   base64Data:
     type: string
     example: base64Data
+  userId:
+    type: integer
+    format: int64
+    example: 123
 

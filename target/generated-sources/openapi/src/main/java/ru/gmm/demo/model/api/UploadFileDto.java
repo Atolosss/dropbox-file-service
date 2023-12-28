@@ -19,12 +19,14 @@ import jakarta.annotation.Generated;
 @lombok.Builder @lombok.NoArgsConstructor
 @lombok.AllArgsConstructor
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-12-27T00:13:58.311485+03:00[Europe/Moscow]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-12-28T23:27:09.963206+08:00[Asia/Makassar]")
 public class UploadFileDto {
 
   private String name;
 
   private String base64Data;
+
+  private Long userId;
 
   public UploadFileDto name(String name) {
     this.name = name;
@@ -66,6 +68,26 @@ public class UploadFileDto {
     this.base64Data = base64Data;
   }
 
+  public UploadFileDto userId(Long userId) {
+    this.userId = userId;
+    return this;
+  }
+
+  /**
+   * Get userId
+   * @return userId
+  */
+  
+  @Schema(name = "userId", example = "123", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
+  @JsonProperty("userId")
+  public Long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(Long userId) {
+    this.userId = userId;
+  }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -76,12 +98,13 @@ public class UploadFileDto {
     }
     UploadFileDto uploadFileDto = (UploadFileDto) o;
     return Objects.equals(this.name, uploadFileDto.name) &&
-        Objects.equals(this.base64Data, uploadFileDto.base64Data);
+        Objects.equals(this.base64Data, uploadFileDto.base64Data) &&
+        Objects.equals(this.userId, uploadFileDto.userId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, base64Data);
+    return Objects.hash(name, base64Data, userId);
   }
 
   @Override
@@ -90,6 +113,7 @@ public class UploadFileDto {
     sb.append("class UploadFileDto {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    base64Data: ").append(toIndentedString(base64Data)).append("\n");
+    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

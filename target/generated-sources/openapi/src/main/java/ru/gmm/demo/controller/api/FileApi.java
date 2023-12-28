@@ -6,7 +6,6 @@
 package ru.gmm.demo.controller.api;
 
 import ru.gmm.demo.model.api.UploadFileDto;
-import ru.gmm.demo.model.api.UploadFileDtoRq;
 import ru.gmm.demo.model.api.UploadFileRs;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.Operation;
@@ -34,7 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-12-27T00:13:58.311485+03:00[Europe/Moscow]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-12-28T23:27:09.963206+08:00[Asia/Makassar]")
 @Validated
 @Tag(name = "file", description = "Operations about files")
 public interface FileApi {
@@ -42,53 +41,6 @@ public interface FileApi {
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
     }
-
-    /**
-     * GET /api/v1/files/{id} : Get file
-     * Get file in bd
-     *
-     * @param id The id that needs to be fetched. Use 123 for example.  (required)
-     * @return Success (status code 200)
-     *         or File not found (status code 404)
-     */
-    @Operation(
-        operationId = "getFile",
-        summary = "Get file",
-        description = "Get file in bd",
-        tags = { "file" },
-        responses = {
-            @ApiResponse(responseCode = "200", description = "Success", content = {
-                @Content(mediaType = "application/json", schema = @Schema(implementation = UploadFileDtoRq.class))
-            }),
-            @ApiResponse(responseCode = "404", description = "File not found")
-        }
-    )
-    @RequestMapping(
-        method = RequestMethod.GET,
-        value = "/api/v1/files/{id}",
-        produces = { "application/json" }
-    )
-    default ResponseEntity<UploadFileDtoRq> _getFile(
-        @Parameter(name = "id", description = "The id that needs to be fetched. Use 123 for example. ", required = true, in = ParameterIn.PATH) @PathVariable("id") String id
-    ) {
-        return getFile(id);
-    }
-
-    // Override this method
-    default  ResponseEntity<UploadFileDtoRq> getFile(String id) {
-        getRequest().ifPresent(request -> {
-            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
-                if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"base64Data\" : \"base64Data\" }";
-                    ApiUtil.setExampleResponse(request, "application/json", exampleString);
-                    break;
-                }
-            }
-        });
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-
-    }
-
 
     /**
      * POST /api/v1/files : post file

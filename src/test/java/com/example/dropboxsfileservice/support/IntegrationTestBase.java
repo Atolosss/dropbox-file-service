@@ -1,6 +1,6 @@
 package com.example.dropboxsfileservice.support;
 
-import com.example.dropboxsfileservice.repository.FileDocumentRepository;
+import com.example.dropboxsfileservice.repository.FileBinaryDataRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class IntegrationTestBase extends MongoDatabaseAwareTestBase {
     @Autowired
     protected WebTestClient webTestClient;
     @Autowired
-    protected FileDocumentRepository fileDocumentRepository;
+    protected FileBinaryDataRepository fileBinaryDataRepository;
 
     @BeforeEach
     void beforeEach() {
@@ -28,7 +28,7 @@ public class IntegrationTestBase extends MongoDatabaseAwareTestBase {
 
     @AfterEach
     void afterEach() {
-        fileDocumentRepository.deleteAll();
+        fileBinaryDataRepository.deleteAll();
     }
 
     @Override

@@ -19,7 +19,7 @@ import jakarta.annotation.Generated;
 @lombok.Builder @lombok.NoArgsConstructor
 @lombok.AllArgsConstructor
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-12-27T00:13:58.311485+03:00[Europe/Moscow]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-12-28T23:27:09.963206+08:00[Asia/Makassar]")
 public class UploadFileRs {
 
   private String key;

@@ -14,10 +14,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 
 @Document
-public class FileDocument {
+public class FileBinaryData {
     @Id
     private String id;
-    private String name;
     private Binary fileData;
 
 }

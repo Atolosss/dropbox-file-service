@@ -1,6 +1,6 @@
 package com.example.dropboxsfileservice.mapper;
 
-import com.example.dropboxsfileservice.model.FileDocument;
+import com.example.dropboxsfileservice.model.FileBinaryData;
 import org.mapstruct.BeanMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -10,6 +10,6 @@ import ru.gmm.demo.model.api.UploadFileRs;
 public interface FileMapper {
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "key", source = "id")
-    UploadFileRs toUploadFileRs(FileDocument fileDocument);
+    UploadFileRs toUploadFileRs(FileBinaryData fileBinaryData);
 
 }
