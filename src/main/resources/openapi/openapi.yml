@@ -1,0 +1,21 @@
+openapi: "3.0.0"
+info:
+  title: dropbox
+  description: "drop description"
+  termsOfService: https://editor.swagger.io/ or https://editor-next.swagger.io/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 0.0.1-SNAPSHOT
+servers:
+  - url: http://localhost:8080
+tags:
+  - name: file
+    description: Operations about files
+    externalDocs:
+      url: https://editor-next.swagger.io/
+paths:
+  /api/v1/files:
+    $ref: "./paths/file.yml"
+  /api/v1/files/{id}:
+    $ref: "./paths/file_id.yml"

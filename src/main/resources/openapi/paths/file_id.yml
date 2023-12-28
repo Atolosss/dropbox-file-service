@@ -1,0 +1,25 @@
+get:
+  tags:
+    - file
+  summary: Get file
+  description: Get file in bd
+  operationId: getFile
+  parameters:
+    - name: id
+      in: path
+      description: 'The id that needs to be fetched. Use 123 for example. '
+      required: true
+      schema:
+        type: string
+      example: 65787
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/UploadFileDtoRq.yml'
+    404:
+      description: File not found
+      content:
+        application/json: { }

@@ -8,10 +8,10 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>dropbox-s3-service</artifactId>
+    <artifactId>dropbox-file-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>s3</name>
-    <description>s3-service</description>
+    <description>file-service</description>
     <properties>
         <java.version>19</java.version>
         <mapstruct.version>1.5.5.Final</mapstruct.version>

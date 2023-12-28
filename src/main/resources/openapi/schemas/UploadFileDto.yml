@@ -1,0 +1,12 @@
+type: object
+required:
+  - name
+  - base64Data
+properties:
+  name:
+    type: string
+    example: file name
+  base64Data:
+    type: string
+    example: base64Data
+

@@ -1,0 +1,24 @@
+post:
+  tags:
+    - file
+  summary: post file
+  description: post File in bd
+  operationId: postFile
+  requestBody:
+    description: Created file
+    content:
+      '*/*':
+        schema:
+          $ref: '../schemas/UploadFileDto.yml'
+    required: true
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/UploadFileRs.yml'
+    404:
+      description: BadRequest
+      content:
+        application/json: { }

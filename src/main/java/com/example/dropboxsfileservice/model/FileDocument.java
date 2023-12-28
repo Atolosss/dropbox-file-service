@@ -1,4 +1,4 @@
-package com.example.dropboxs3service.model;
+package com.example.dropboxsfileservice.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,7 +18,6 @@ public class FileDocument {
     @Id
     private String id;
     private String name;
-    private String url;
     private Binary fileData;
 
 }
