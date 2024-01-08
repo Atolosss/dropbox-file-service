@@ -5,6 +5,7 @@ import com.example.dropboxsfileservice.exception.ServiceException;
 import com.example.dropboxsfileservice.mapper.FileMapper;
 import com.example.dropboxsfileservice.model.FileBinaryData;
 import com.example.dropboxsfileservice.model.FileMetaData;
+import com.example.dropboxsfileservice.model.dto.FileMetaRs;
 import com.example.dropboxsfileservice.repository.FileBinaryDataRepository;
 import com.example.dropboxsfileservice.repository.FileMetaDataRepository;
 import lombok.AllArgsConstructor;
@@ -15,7 +16,9 @@ import org.springframework.stereotype.Service;
 import ru.gmm.demo.model.api.UploadFileDto;
 import ru.gmm.demo.model.api.UploadFileRs;
 
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -38,6 +41,7 @@ public class FileDocumentService {
         final FileMetaData fileMetaData = FileMetaData.builder()
                 .name(uploadFileDto.getName())
                 .fileBinaryDataId(fileBinaryData.getId())
+                .userId(uploadFileDto.getUserId())
                 .build();
 
         fileMetaDataRepository.save(fileMetaData);
@@ -52,4 +56,25 @@ public class FileDocumentService {
         return fileBinaryData.getFileData();
     }
 
+    public List<Binary> getAllFiles(final Long id) {
+        List<FileMetaData> fileMetaData = fileMetaDataRepository.findByUserId(id)
+                .orElseThrow(() -> new ServiceException(ErrorCode.ERR_CODE_002, id));
+        if (fileMetaData.isEmpty()) {
+            throw new ServiceException(ErrorCode.ERR_CODE_002, id);
+        }
+        List<Binary> binaryList = new ArrayList<>();
+        for (FileMetaData f : fileMetaData) {
+            binaryList.add(fileBinaryDataRepository.findById(f.getFileBinaryDataId()).get().getFileData());
+        }
+        return binaryList;
+    }
+
+    public List<FileMetaRs> getAllMetaFiles(final Long id) {
+        List<FileMetaData> fileMetaData = fileMetaDataRepository.findByUserId(id)
+                .orElseThrow(() -> new ServiceException(ErrorCode.ERR_CODE_002, id));
+        if (fileMetaData.isEmpty()) {
+            throw new ServiceException(ErrorCode.ERR_CODE_002, id);
+        }
+        return fileMetaData.stream().map(fileMapper::toFileMetaRs).toList();
+    }
 }

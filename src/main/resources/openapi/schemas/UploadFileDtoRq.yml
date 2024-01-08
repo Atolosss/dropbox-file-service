@@ -1,5 +1,0 @@
-type: object
-properties:
-  base64Data:
-      type: string
-      format: byte

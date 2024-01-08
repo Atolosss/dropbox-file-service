@@ -17,5 +17,4 @@ tags:
 paths:
   /api/v1/files:
     $ref: "./paths/file.yml"
-#  /api/v1/files/{id}:
-#    $ref: "./paths/file_id.yml"
+

@@ -8,9 +8,6 @@ import ru.gmm.demo.controller.api.FileApi;
 import ru.gmm.demo.model.api.UploadFileDto;
 import ru.gmm.demo.model.api.UploadFileRs;
 
-
-//TODO: tests
-//TODO: refactor tests (поднять покрытие по jacoco)
 @RestController
 @RequiredArgsConstructor
 public class FileDocumentController implements FileApi {

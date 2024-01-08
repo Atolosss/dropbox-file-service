@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-12-28T23:27:09.963206+08:00[Asia/Makassar]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-08T03:27:59.849878400+03:00[Europe/Moscow]")
 @Validated
 @Tag(name = "file", description = "Operations about files")
 public interface FileApi {
