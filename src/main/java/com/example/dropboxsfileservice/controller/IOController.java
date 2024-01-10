@@ -15,8 +15,6 @@ import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBo
 import java.util.List;
 
 
-//TODO: tests
-//TODO: refactor tests (поднять покрытие по jacoco)
 @RestController
 @RequiredArgsConstructor
 public class IOController {

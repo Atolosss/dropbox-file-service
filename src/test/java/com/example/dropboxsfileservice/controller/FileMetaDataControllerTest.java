@@ -32,7 +32,7 @@ public class FileMetaDataControllerTest extends IntegrationTestBase {
         fileDocumentService.uploadFile(upload3);
 
         assertThat(getMetaFiles(upload2.getUserId()))
-                .isEqualTo(fileDocumentService.getAllMetaFiles(upload3.getUserId()));;
+                .isEqualTo(fileDocumentService.getAllMetaFiles(upload3.getUserId()));
 
     }
 
