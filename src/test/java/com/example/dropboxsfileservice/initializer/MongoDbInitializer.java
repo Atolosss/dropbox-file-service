@@ -7,6 +7,7 @@ import org.testcontainers.containers.MongoDBContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.utility.DockerImageName;
 
+@SuppressWarnings("UseUnderscoresInNumericLiterals")
 public class MongoDbInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
     private static final DockerImageName IMAGE = DockerImageName.parse("mongo:latest");

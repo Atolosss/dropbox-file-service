@@ -1,7 +1,7 @@
 package com.example.dropboxsfileservice.support;
 
+import com.dropbox.model.api.UploadFileDto;
 import lombok.experimental.UtilityClass;
-import ru.gmm.demo.model.api.UploadFileDto;
 
 @UtilityClass
 @SuppressWarnings("LineLength")

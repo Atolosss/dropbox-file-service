@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+@SuppressWarnings("UseConcurrentHashMap")
 public class IntegrationTestBase extends MongoDatabaseAwareTestBase {
     @LocalServerPort
     protected int localPort;

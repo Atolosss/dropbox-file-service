@@ -1,4 +1,4 @@
-package ru.gmm.demo.model.api;
+package com.dropbox.model.api;
 
 import java.net.URI;
 import java.util.Objects;
@@ -19,14 +19,14 @@ import jakarta.annotation.Generated;
 @lombok.Builder @lombok.NoArgsConstructor
 @lombok.AllArgsConstructor
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-11T01:44:04.314051100+03:00[Europe/Moscow]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-11T03:01:14.466247300+03:00[Europe/Moscow]")
 public class UploadFileDto {
 
   private String name;
 
-  private String base64Data;
-
   private Long userId;
+
+  private String base64Data;
 
   public UploadFileDto name(String name) {
     this.name = name;
@@ -46,6 +46,26 @@ public class UploadFileDto {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public UploadFileDto userId(Long userId) {
+    this.userId = userId;
+    return this;
+  }
+
+  /**
+   * Get userId
+   * @return userId
+  */
+  @NotNull 
+  @Schema(name = "userId", example = "123", requiredMode = Schema.RequiredMode.REQUIRED)
+  @JsonProperty("userId")
+  public Long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(Long userId) {
+    this.userId = userId;
   }
 
   public UploadFileDto base64Data(String base64Data) {
@@ -68,26 +88,6 @@ public class UploadFileDto {
     this.base64Data = base64Data;
   }
 
-  public UploadFileDto userId(Long userId) {
-    this.userId = userId;
-    return this;
-  }
-
-  /**
-   * Get userId
-   * @return userId
-  */
-  
-  @Schema(name = "userId", example = "123", requiredMode = Schema.RequiredMode.NOT_REQUIRED)
-  @JsonProperty("userId")
-  public Long getUserId() {
-    return userId;
-  }
-
-  public void setUserId(Long userId) {
-    this.userId = userId;
-  }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -98,13 +98,13 @@ public class UploadFileDto {
     }
     UploadFileDto uploadFileDto = (UploadFileDto) o;
     return Objects.equals(this.name, uploadFileDto.name) &&
-        Objects.equals(this.base64Data, uploadFileDto.base64Data) &&
-        Objects.equals(this.userId, uploadFileDto.userId);
+        Objects.equals(this.userId, uploadFileDto.userId) &&
+        Objects.equals(this.base64Data, uploadFileDto.base64Data);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, base64Data, userId);
+    return Objects.hash(name, userId, base64Data);
   }
 
   @Override
@@ -112,8 +112,8 @@ public class UploadFileDto {
     StringBuilder sb = new StringBuilder();
     sb.append("class UploadFileDto {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    base64Data: ").append(toIndentedString(base64Data)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    base64Data: ").append(toIndentedString(base64Data)).append("\n");
     sb.append("}");
     return sb.toString();
   }

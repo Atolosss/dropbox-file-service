@@ -1,13 +1,13 @@
 package com.example.dropboxsfileservice.controller;
 
+import com.dropbox.model.api.UploadFileDto;
+import com.dropbox.model.api.UploadFileRs;
 import com.example.dropboxsfileservice.model.FileBinaryData;
 import com.example.dropboxsfileservice.support.DataProvider;
 import com.example.dropboxsfileservice.support.IntegrationTestBase;
 import org.bson.BsonBinarySubType;
 import org.bson.types.Binary;
 import org.junit.jupiter.api.Test;
-import ru.gmm.demo.model.api.UploadFileDto;
-import ru.gmm.demo.model.api.UploadFileRs;
 
 import java.util.Base64;
 

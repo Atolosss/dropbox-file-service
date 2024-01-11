@@ -1,5 +1,7 @@
 package com.example.dropboxsfileservice.service;
 
+import com.dropbox.model.api.UploadFileDto;
+import com.dropbox.model.api.UploadFileRs;
 import com.example.dropboxsfileservice.constant.ErrorCode;
 import com.example.dropboxsfileservice.exception.ServiceException;
 import com.example.dropboxsfileservice.mapper.FileMapper;
@@ -13,8 +15,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.bson.BsonBinarySubType;
 import org.bson.types.Binary;
 import org.springframework.stereotype.Service;
-import ru.gmm.demo.model.api.UploadFileDto;
-import ru.gmm.demo.model.api.UploadFileRs;
 
 import java.util.ArrayList;
 import java.util.Base64;

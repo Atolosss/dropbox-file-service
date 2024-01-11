@@ -1,4 +1,4 @@
-package ru.gmm.demo.controller.api;
+package com.dropbox.controller.api;
 
 import org.springframework.web.context.request.NativeWebRequest;
 

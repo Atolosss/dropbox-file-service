@@ -21,4 +21,13 @@
     <Match>
         <Bug pattern="UC_USELESS_VOID_METHOD"/>
     </Match>
+    <Match>
+        <Bug pattern="UseUnderscoresInNumericLiterals"/>
+    </Match>
+    <Match>
+        <Bug pattern="UseConcurrentHashMap"/>
+    </Match>
+    <Match>
+        <Bug pattern="JUnit5TestShouldBePackagePrivate"/>
+    </Match>
 </FindBugsFilter>

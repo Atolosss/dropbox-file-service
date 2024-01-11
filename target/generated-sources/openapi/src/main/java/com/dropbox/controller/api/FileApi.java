@@ -3,10 +3,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-package ru.gmm.demo.controller.api;
+package com.dropbox.controller.api;
 
-import ru.gmm.demo.model.api.UploadFileDto;
-import ru.gmm.demo.model.api.UploadFileRs;
+import com.dropbox.model.api.UploadFileDto;
+import com.dropbox.model.api.UploadFileRs;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -33,7 +33,7 @@ import java.util.Map;
 import java.util.Optional;
 import jakarta.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-11T01:44:04.314051100+03:00[Europe/Moscow]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2024-01-11T03:01:14.466247300+03:00[Europe/Moscow]")
 @Validated
 @Tag(name = "file", description = "Operations about files")
 public interface FileApi {

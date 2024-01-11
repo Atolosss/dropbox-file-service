@@ -86,7 +86,6 @@
             <version>${mongodb.version}</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
@@ -147,8 +146,8 @@
                                 ${project.basedir}/src/main/resources/openapi/openapi.yml
                             </inputSpec>
                             <generatorName>spring</generatorName>
-                            <apiPackage>ru.gmm.demo.controller.api</apiPackage>
-                            <modelPackage>ru.gmm.demo.model.api</modelPackage>
+                            <apiPackage>com.dropbox.controller.api</apiPackage>
+                            <modelPackage>com.dropbox.model.api</modelPackage>
                             <supportingFilesToGenerate>
                                 ApiUtil.java
                             </supportingFilesToGenerate>
