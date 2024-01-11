@@ -16,7 +16,6 @@ import org.bson.BsonBinarySubType;
 import org.bson.types.Binary;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
@@ -56,25 +55,9 @@ public class FileDocumentService {
         return fileBinaryData.getFileData();
     }
 
-    public List<Binary> getAllFiles(final Long id) {
-        List<FileMetaData> fileMetaData = fileMetaDataRepository.findByUserId(id)
-                .orElseThrow(() -> new ServiceException(ErrorCode.ERR_CODE_002, id));
-        if (fileMetaData.isEmpty()) {
-            throw new ServiceException(ErrorCode.ERR_CODE_002, id);
-        }
-        List<Binary> binaryList = new ArrayList<>();
-        for (FileMetaData f : fileMetaData) {
-            binaryList.add(fileBinaryDataRepository.findById(f.getFileBinaryDataId()).get().getFileData());
-        }
-        return binaryList;
-    }
-
     public List<FileMetaRs> getAllMetaFiles(final Long id) {
-        List<FileMetaData> fileMetaData = fileMetaDataRepository.findByUserId(id)
-                .orElseThrow(() -> new ServiceException(ErrorCode.ERR_CODE_002, id));
-        if (fileMetaData.isEmpty()) {
-            throw new ServiceException(ErrorCode.ERR_CODE_002, id);
-        }
-        return fileMetaData.stream().map(fileMapper::toFileMetaRs).toList();
+        return fileMetaDataRepository.findByUserId(id).stream()
+                .map(fileMapper::toFileMetaRs)
+                .toList();
     }
 }
