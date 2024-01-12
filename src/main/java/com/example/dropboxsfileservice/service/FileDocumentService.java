@@ -7,7 +7,6 @@ import com.example.dropboxsfileservice.exception.ServiceException;
 import com.example.dropboxsfileservice.mapper.FileMapper;
 import com.example.dropboxsfileservice.model.FileBinaryData;
 import com.example.dropboxsfileservice.model.FileMetaData;
-import com.example.dropboxsfileservice.model.dto.FileMetaRs;
 import com.example.dropboxsfileservice.repository.FileBinaryDataRepository;
 import com.example.dropboxsfileservice.repository.FileMetaDataRepository;
 import lombok.AllArgsConstructor;
@@ -17,7 +16,6 @@ import org.bson.types.Binary;
 import org.springframework.stereotype.Service;
 
 import java.util.Base64;
-import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -55,9 +53,4 @@ public class FileDocumentService {
         return fileBinaryData.getFileData();
     }
 
-    public List<FileMetaRs> getAllMetaFiles(final Long id) {
-        return fileMetaDataRepository.findByUserId(id).stream()
-                .map(fileMapper::toFileMetaRs)
-                .toList();
-    }
 }
